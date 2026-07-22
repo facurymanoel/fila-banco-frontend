@@ -1,1 +1,32 @@
-<p>emitir-senha works!</p>
+ <div class="container">
+
+    <h1>Emitir Senha</h1>
+
+    <div class="botoes">
+
+        <button (click)="emitirSenha('NORMAL')">
+            Normal
+        </button>
+
+        <button (click)="emitirSenha('PREFERENCIAL')">
+            Preferencial
+        </button>
+
+    </div>
+
+    @if (senhaDto) {
+    
+        <div class="resultado">
+
+           <h2>Sua senha:</h2>
+
+           <h1>{{ senhaDto.codigo }}</h1>
+
+          <p>
+            Data: {{ senhaDto.dataCriacao }}
+          </p>
+
+       </div>
+    }
+
+ </div>
