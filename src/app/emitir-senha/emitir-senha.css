@@ -1,0 +1,84 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+}
+
+.card {
+    width: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+    padding: 40px;
+    text-align: center;
+}
+
+h1 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+    font-size: 38px;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px;
+}
+
+button {
+    width: 180px;
+    height: 55px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.normal {
+    background: #2563eb;
+}
+
+.normal:hover {
+    background: #1d4ed8;
+}
+
+.preferencial {
+    background: #1e40af;
+}
+
+.preferencial:hover {
+    background: #2563eb;
+
+}
+
+.resultado {
+    border-top: 1px solid #ddd;
+    padding-top: 30px;
+}
+
+.resultado h2 {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.senha {
+    font-size: 70px;
+    font-weight: bold;
+    color: #dc2626;
+    margin-bottom: 20px;
+}
+
+.data {
+    color: #666;
+    font-size: 17px;
+}

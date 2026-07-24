@@ -1,20 +1,44 @@
 <div class="container">
 
-    <h1>Emitir Senha</h1>
+    <div class="card">
 
-    <div class="botoes">
+        <h1>Emitir Senha</h1>
 
-        <button (click)="emitirSenha('NORMAL')">
-            Normal
-        </button>
+        <p>
+            Escolha o tipo de atendimento
+        </p>
 
-        <button (click)="emitirSenha('PREFERENCIAL')">
-            Preferencial
-        </button>
+        <div class="botoes">
 
-    </div>
-    <p>{{ senhaDto.codigo }}</p>
+            <button class="normal" 
+                    (click)="emitirSenha('NORMAL')">
 
-    <p>{{ senhaDto.dataCriacao }}</p>
+                Normal
+            </button>
 
+            <button class="preferencial" 
+                    (click)="emitirSenha('PREFERENCIAL')">
+
+                Preferencial
+            </button>
+
+        </div>
+        <div class="resultado">
+
+            <h2>Sua senha</h2>
+
+            <div class="senha">
+
+                {{ senhaDto.codigo }}
+
+            </div>
+
+            <p class="data">
+
+                {{ senhaDto.dataCriacao }}
+
+            </p>
+
+        </div>
+     </div>
 </div>
