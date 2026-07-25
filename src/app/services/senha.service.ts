@@ -24,9 +24,15 @@ export class SenhaService {
           );
      }
 
-     // proximaSenha():Observable<ProximaSenhaDto>{
+     proximaSenha(): Observable<ProximaSenhaDto> {
 
-     //}
+          return this.http.post<ProximaSenhaDto>(
+               ` ${this.apiUrl}/chamar`,
+               {}
+          );
+
+
+     }
 
      //finalizarSenha():Observable<FinalizarSenhaDto>{
 

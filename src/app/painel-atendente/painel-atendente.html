@@ -16,7 +16,8 @@
 
         <div class="botoes">
 
-            <button class="proxima">
+            <button class="proxima" (click)="chamarProximaSenha()">
+
                 Chamar Próxima Senha
             </button>
 
@@ -24,6 +25,9 @@
                 Finalizar Atendimento
             </button>
 
+            <p>{{ proximaSenhaDto.codigo }}</p>
+            <p>{{ proximaSenhaDto.status }}</p>
+            <p>{{ proximaSenhaDto.dataInicioAtendimento }}</p>
 
         </div>
 
