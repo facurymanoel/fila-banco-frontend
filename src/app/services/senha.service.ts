@@ -34,7 +34,14 @@ export class SenhaService {
 
      }
 
-     //finalizarSenha():Observable<FinalizarSenhaDto>{
+     finalizarSenha(): Observable<FinalizarSenhaDto> {
 
-     //}
+          return this.http.post<FinalizarSenhaDto>(
+
+               `${this.apiUrl}/finalizar`,
+               {}
+          );
+
+
+     }
 }

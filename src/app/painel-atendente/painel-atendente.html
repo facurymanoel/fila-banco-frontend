@@ -16,18 +16,23 @@
 
         <div class="botoes">
 
-            <button class="proxima" (click)="chamarProximaSenha()">
+            <button class="proxima" 
+                    (click)="chamarProximaSenha()">
 
                 Chamar Próxima Senha
             </button>
 
-            <button class="finalizar">
+            <button class="finalizar" 
+                    (click)="finalizarSenha()">
+
                 Finalizar Atendimento
             </button>
 
             <p>{{ proximaSenhaDto.codigo }}</p>
             <p>{{ proximaSenhaDto.status }}</p>
             <p>{{ proximaSenhaDto.dataInicioAtendimento }}</p>
+
+
 
         </div>
 
