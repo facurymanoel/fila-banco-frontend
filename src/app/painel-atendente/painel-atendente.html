@@ -4,35 +4,40 @@
 
         <h1>Painel do Atendente</h1>
 
-        <p>
-            Gerenciamento de Atendimento
-        </p>
+        <div class="senha-atual">
 
-        <div class="senha">
+            <h2>Senha Atual</h2>
 
-            ----
+            <p class="codigo">
+                {{ proximaSenhaDto.codigo }}
+            </p>
+
+            <p class="status">
+                {{ proximaSenhaDto.status }}
+            </p>
+
+            @if(proximaSenhaDto.status === 'ATENDENDO'){
+
+                <P class="data">
+                   Início:
+                   {{ proximaSenhaDto.dataInicioAtendimento }}
+                </P>
+
+            }
 
         </div>
 
         <div class="botoes">
 
-            <button class="proxima" 
+            <button class="chamar" 
                     (click)="chamarProximaSenha()">
-
-                Chamar Próxima Senha
+                    Chamar Próxima Senha
             </button>
 
             <button class="finalizar" 
                     (click)="finalizarSenha()">
-
-                Finalizar Atendimento
+                    Finalizar Atendimento
             </button>
-
-            <p>{{ proximaSenhaDto.codigo }}</p>
-            <p>{{ proximaSenhaDto.status }}</p>
-            <p>{{ proximaSenhaDto.dataInicioAtendimento }}</p>
-
-
 
         </div>
 
