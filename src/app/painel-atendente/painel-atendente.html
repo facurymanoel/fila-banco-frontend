@@ -4,6 +4,12 @@
 
         <h1>Painel do Atendente</h1>
 
+        @if (mensagemErro) {
+        <p class="erro">
+            {{ mensagemErro }}
+        </p>
+        }
+
         <div class="senha-atual">
 
             <h2>Senha Atual</h2>
@@ -16,27 +22,18 @@
                 {{ proximaSenhaDto.status }}
             </p>
 
-            @if(proximaSenhaDto.status === 'ATENDENDO'){
 
-                <P class="data">
-                   Início:
-                   {{ proximaSenhaDto.dataInicioAtendimento }}
-                </P>
-
-            }
 
         </div>
 
         <div class="botoes">
 
-            <button class="chamar" 
-                    (click)="chamarProximaSenha()">
-                    Chamar Próxima Senha
+            <button class="chamar" (click)="chamarProximaSenha()">
+                Chamar Próxima Senha
             </button>
 
-            <button class="finalizar" 
-                    (click)="finalizarSenha()">
-                    Finalizar Atendimento
+            <button class="finalizar" (click)="finalizarSenha()">
+                Finalizar Atendimento
             </button>
 
         </div>

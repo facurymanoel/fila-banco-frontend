@@ -69,6 +69,12 @@ button {
      background: #1e3a8a;
 
 }
+.erro{
+    color: #dc2626;
+    font-weight: bold;
+    margin: 15px 0;
+    text-align: center;
+}
  
 
  
