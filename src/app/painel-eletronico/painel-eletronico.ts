@@ -17,6 +17,8 @@ export class PainelEletronico {
 
   private audio = new Audio('assets/audio/bip.mp3');
 
+  private audioLiberado = false;
+
   senhaAtual: ProximaSenhaDto = {
 
     codigo: '',
@@ -35,6 +37,20 @@ export class PainelEletronico {
     });
   }
 
+  liberarAudio() {
+
+    this.audio.play()
+         .then(() =>{
+
+           this.audio.pause();
+           this.audio.currentTime = 0;
+
+           this.audioLiberado = true;
+
+         })
+         .catch(erro => console.log(erro));
+  }
+
   buscarSenha() {
 
     this.senhaService.buscarSenhaAtual()
@@ -44,10 +60,13 @@ export class PainelEletronico {
 
           this.senhaAtual = resposta;
 
-          this.audio.currentTime = 0;
-          this.audio.play();
+          if(this.audioLiberado){
+              
+             this.audio.currentTime = 0;
+             this.audio.play();
+          }
 
-          this.cdr.detectChanges();
+         this.cdr.detectChanges();
 
         }
 
