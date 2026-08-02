@@ -48,7 +48,7 @@ export class SenhaService {
      buscarSenhaAtual() {
 
           return this.http.get<ProximaSenhaDto>(
-               this.apiUrl + '/painel'
+               `${this.apiUrl}/painel`
           );
 
 

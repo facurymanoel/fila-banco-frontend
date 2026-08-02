@@ -1,6 +1,7 @@
 import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { SenhaService } from '../services/senha.service';
 import { ProximaSenhaDto } from '../models/proxima-senha-dto';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-painel-eletronico',
@@ -14,6 +15,8 @@ export class PainelEletronico {
 
   private cdr = inject(ChangeDetectorRef);
 
+  private audio = new Audio('assets/audio/bip.mp3');
+
   senhaAtual: ProximaSenhaDto = {
 
     codigo: '',
@@ -25,6 +28,11 @@ export class PainelEletronico {
   ngOnInit() {
 
     this.buscarSenha();
+
+    interval(3000).subscribe(() => {
+
+      this.buscarSenha();
+    });
   }
 
   buscarSenha() {
@@ -32,9 +40,16 @@ export class PainelEletronico {
     this.senhaService.buscarSenhaAtual()
       .subscribe(resposta => {
 
-        this.senhaAtual = resposta;
+        if (this.senhaAtual.codigo !== resposta.codigo) {
 
-        this.cdr.detectChanges();
+          this.senhaAtual = resposta;
+
+          this.audio.currentTime = 0;
+          this.audio.play();
+
+          this.cdr.detectChanges();
+
+        }
 
       });
 
