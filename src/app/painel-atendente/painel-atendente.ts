@@ -76,6 +76,10 @@ export class PainelAtendente {
                });
      }
 
+     abrirPainelEletronico() {
+          window.open('/painel', '_blank');
+     }
+
 
 
 
