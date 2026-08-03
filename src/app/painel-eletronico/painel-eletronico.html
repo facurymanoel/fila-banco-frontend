@@ -1,6 +1,6 @@
 <div class="painel">
-    
-    <h1>Senha Atual</h1>
+
+    <h1>SENHA ATUAL</h1>
 
     <div class="senha">
 
@@ -8,9 +8,12 @@
 
     </div>
 
-    <button (click)="liberarAudio()">
+    @if(!audioLiberado){
+       <button class="botao-audio" 
+          (click)="liberarAudio()">
           Ativar Som
-    </button>
+       </button>
+    }
 
     <h2>Caixa 1</h2>
 

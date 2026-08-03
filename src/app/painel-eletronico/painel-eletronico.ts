@@ -2,10 +2,10 @@ import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { SenhaService } from '../services/senha.service';
 import { ProximaSenhaDto } from '../models/proxima-senha-dto';
 import { interval } from 'rxjs';
+ 
 
 @Component({
   selector: 'app-painel-eletronico',
-  imports: [],
   templateUrl: './painel-eletronico.html',
   styleUrl: './painel-eletronico.css',
 })
@@ -17,7 +17,7 @@ export class PainelEletronico {
 
   private audio = new Audio('assets/audio/bip.mp3');
 
-  private audioLiberado = false;
+  audioLiberado = false;
 
   senhaAtual: ProximaSenhaDto = {
 
