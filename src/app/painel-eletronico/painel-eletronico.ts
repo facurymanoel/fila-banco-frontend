@@ -31,7 +31,7 @@ export class PainelEletronico {
 
     this.buscarSenha();
 
-    interval(3000).subscribe(() => {
+    interval(6000).subscribe(() => {
 
       this.buscarSenha();
     });
@@ -61,7 +61,7 @@ export class PainelEletronico {
           this.senhaAtual = resposta;
 
           if(this.audioLiberado){
-              
+                           
              this.audio.currentTime = 0;
              this.audio.play();
           }
